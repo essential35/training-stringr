@@ -1,0 +1,21 @@
+---
+title: "stringr 挑戰"
+author: "林茂廷"
+date: "1/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=F)
+library(readr); library(dplyr); library(stringr); library(purrr); library(lubridate);
+```
+
+以下每題都會產生兩個字串向量分別以xxx_from及xxx_to結尾，你必需要能用「一行」stringr裡的函數將from的內容轉成to的內容。注意只能一行，因為這是在訓練你是否能活用stringr套件及regular expression
+
+## 1
+
+```{r}
+stringrChallenge1_from <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/stringrChallenge1_from.csv")[[1]]
+stringrChallenge1_to <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/stringrChallenge1_to.csv")[[1]]
+```
+
