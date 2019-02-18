@@ -9,6 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE,message=F)
 library(readr); library(dplyr); library(stringr); library(purrr); library(lubridate);
 ```
+```{r}
+Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
+```
 
 以下每題都會產生兩個字串向量分別以xxx_from及xxx_to結尾，你必需要能用「一行」stringr裡的函數將from的內容轉成to的內容。注意只能一行，因為這是在訓練你是否能活用stringr套件及regular expression
 
@@ -19,3 +22,15 @@ stringrChallenge1_from <- read_csv("https://raw.githubusercontent.com/tpemartin/
 stringrChallenge1_to <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/stringrChallenge1_to.csv")[[1]]
 ```
 
+```{r}
+stringr::str_remove(stringrChallenge1_from,"new") %>%
+  str_remove(.,"_1") %>%
+  str_replace(.,"[- ]","_") %>%
+  str_remove(.," ")
+```
+```{r}
+stringrChallenge1_from %>%
+  str_replace(.,"new_|new-|-| ","_") %>%
+  str_remove(.,"_1") %>%
+  str_remove(.," ")
+```
