@@ -34,3 +34,8 @@ stringrChallenge1_from %>%
   str_remove(.,"_1") %>%
   str_remove(.," ")
 ```
+
+```{r}
+stringrChallenge1_from
+```
+
