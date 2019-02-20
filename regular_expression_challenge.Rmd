@@ -23,16 +23,13 @@ stringrChallenge1_to <- read_csv("https://raw.githubusercontent.com/tpemartin/gi
 ```
 
 ```{r}
-stringr::str_remove(stringrChallenge1_from,"new") %>%
-  str_remove(.,"_1") %>%
-  str_replace(.,"[- ]","_") %>%
-  str_remove(.," ")
-```
-```{r}
+#regular expression
+#str_u_all
+library(stringr)
+
 stringrChallenge1_from %>%
-  str_replace(.,"new_|new-|-| ","_") %>%
-  str_remove(.,"_1") %>%
-  str_remove(.," ")
+  str_replace(.,"_1(new(_|-)|_|-|\\s\\s)","_") 
+  
 ```
 
 ```{r}
